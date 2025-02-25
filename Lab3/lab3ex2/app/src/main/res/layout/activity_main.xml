@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFEB3B"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/turnOnOff"
+        android:layout_width="163dp"
+        android:layout_height="67dp"
+        android:onClick="switchLight"
+        android:text="Turn Light On/Off"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Switch
+        android:id="@+id/AutoModeSwitch"
+        android:layout_width="148dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="22dp"
+        android:layout_marginEnd="234dp"
+        android:layout_marginBottom="272dp"
+        android:checked="false"
+        android:onClick="IsAutoOn"
+        android:text="Auto Mode"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/turnOnOff"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:checked="false" />
+
+    <Button
+        android:id="@+id/Custom_btn"
+        android:layout_width="117dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="250dp"
+        android:layout_marginBottom="20dp"
+        android:text="Custom"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/turnOnOff"
+        android:onClick="ChangeCustomColor"/>
+</androidx.constraintlayout.widget.ConstraintLayout>
