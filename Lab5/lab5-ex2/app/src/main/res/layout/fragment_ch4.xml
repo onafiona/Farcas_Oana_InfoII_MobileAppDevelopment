@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Ch4Fragment">
+
+    <TextView
+        android:id="@+id/ch4text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="638dp"
+        android:text="CHAPTER 4"
+        android:textSize="34sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ScrollView
+        android:layout_width="409dp"
+        android:layout_height="627dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ch4text">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/chapter_text"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="16dp"
+                android:text="The Keeper's Challenge\n\nElena stood at the threshold of the forest, the air thick with the ancient magic that surrounded her. The figure of the old woman, the Keeper of the Forest, had disappeared into the mist, leaving Elena alone with the weight of her decision.\n\nThe path ahead was shrouded in mist, winding deeper into the unknown. The whispers of the forest called to her, urging her to take the next step. But something held her back. She had made it this far, but now, in this moment, she felt the full force of the challenge before her.\n\nSuddenly, a low growl echoed through the trees, breaking the silence. Elena's heart raced as a shadow moved among the trees. The whispers grew louder, more urgent. She could feel the presence of something—or someone—watching her.\n\nOut of the shadows emerged a creature, its eyes glowing with an unnatural light. It was a beast, half man, half wolf, with fur as dark as the night and claws that gleamed like silver. The creature stood before her, its gaze fixed on her as if judging her every move.\n\n'You have come to face the heart of the forest,' the creature said, its voice like a growl. 'But before you can proceed, you must prove your worth.'\n\nElena swallowed, fear rising in her chest. What had she gotten herself into? Was she truly ready to face whatever challenges lay ahead? The creature's eyes pierced into her soul, and she realized that the real test had just begun."
+
+                android:textSize="18sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ch4text"
+                tools:layout_editor_absoluteX="1dp" />
+            <Button
+                android:id="@+id/exitbookbttn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Exit Book"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/chapter_text"
+                app:layout_constraintEnd_toStartOf="@id/backtoch3bttn"
+                app:layout_constraintHorizontal_bias="0" />
+
+            <Button
+                android:id="@+id/backtoch3bttn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Previous Chapter"
+                app:layout_constraintStart_toEndOf="@id/exitbookbttn"
+                app:layout_constraintTop_toBottomOf="@id/chapter_text"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1" />
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

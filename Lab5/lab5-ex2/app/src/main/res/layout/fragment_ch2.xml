@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Ch2Fragment">
+
+    <TextView
+        android:id="@+id/ch2text"
+        android:layout_width="211dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="638dp"
+        android:text="CHAPTER 2"
+        android:textAlignment="center"
+        android:textSize="34sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ScrollView
+        android:layout_width="409dp"
+        android:layout_height="627dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ch2text">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/chapter_text"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="16dp"
+                android:text="The Heart of the Forest\n\nElena stood frozen before the stone archway, its presence both awe-inspiring and terrifying. The whispers in the air seemed to pull at her, urging her forward. The golden light from the clearing was soft, inviting, but there was an underlying sense of danger that made her heart race.\n\nFor a moment, she considered turning back. The path she had walked seemed long and perilous, and the forest had already shown itself to be more than just a collection of trees. But something within her urged her to step closer. She had come too far to stop now.\n\nShe took a tentative step toward the archway, the ground beneath her feet soft and damp. The air grew thicker, as though the very atmosphere was charged with an ancient energy. The whispers grew louder, almost as if they were calling her name. Elena's breath caught in her throat as a figure appeared within the golden light—an old woman, her eyes glowing with an unnatural brightness, her voice like the wind itself.\n\n'You’ve come,' the old woman said, her voice a mixture of warmth and warning. 'The forest has been waiting for you.'\n\nElena hesitated. She had heard stories of those who were lost in the forest, never to return. Yet something about the woman’s gaze felt familiar, like she had seen her in a dream.\n\n'Who are you?' Elena asked, her voice trembling.\n\nThe woman smiled, her face both kind and haunting. 'I am the Keeper of the Forest. And now, you must choose your path.'\n\nThe clearing seemed to shift, the air thick with magic. Elena felt the weight of the decision before her, the pull of something far greater than herself. She had come seeking answers, but now, she was uncertain. Would she step into the unknown or leave the forest behind?\n\nThe woman’s voice echoed in her mind as the world around her began to blur. 'Only the heart that dares will find its truth.'\n\nElena closed her eyes, feeling the weight of the decision in her chest. When she opened them again, she stepped forward.\n\nThe path to the heart of the forest had begun."
+                android:textSize="18sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ch1title"
+                tools:layout_editor_absoluteX="1dp" />
+            <Button
+                android:id="@+id/toch3bttn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Next Chapter"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/chapter_text"
+                app:layout_constraintEnd_toStartOf="@id/backtoch1bttn"
+                app:layout_constraintHorizontal_bias="0" />
+
+            <Button
+                android:id="@+id/backtoch1bttn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Previous Chapter"
+                app:layout_constraintStart_toEndOf="@id/toch3bttn"
+                app:layout_constraintTop_toBottomOf="@id/chapter_text"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1" />
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>
