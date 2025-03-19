@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Player X's turn"
+            android:textSize="24sp"
+            android:textColor="#333333"
+            android:layout_marginBottom="20dp"/>
+
+        <GridLayout
+            android:id="@+id/gridLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:columnCount="3"
+            android:rowCount="3">
+
+            <!-- 9 buttons for the Tic Tac Toe grid -->
+            <Button
+                android:id="@+id/button00"
+                android:onClick="Clicked"
+                style="@style/TicTacToeButton"/>
+            <Button
+                android:id="@+id/button01"
+                android:onClick="Clicked"
+                style="@style/TicTacToeButton"/>
+            <Button
+                android:id="@+id/button02"
+                android:onClick="Clicked"
+                style="@style/TicTacToeButton"/>
+            <Button
+                android:id="@+id/button10"
+                android:onClick="Clicked"
+                style="@style/TicTacToeButton"/>
+            <Button
+                android:id="@+id/button11"
+                android:onClick="Clicked"
+                style="@style/TicTacToeButton"/>
+            <Button
+                android:id="@+id/button12"
+                android:onClick="Clicked"
+                style="@style/TicTacToeButton"/>
+            <Button
+                android:id="@+id/button20"
+                android:onClick="Clicked"
+                style="@style/TicTacToeButton"/>
+            <Button
+                android:id="@+id/button21"
+                android:onClick="Clicked"
+                style="@style/TicTacToeButton"/>
+            <Button
+                android:id="@+id/button22"
+                android:onClick="Clicked"
+                style="@style/TicTacToeButton"/>
+        </GridLayout>
+
+        <Button
+            android:id="@+id/resetButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Reset Game"
+            android:onClick="resetGame"
+            android:layout_gravity="center"
+            android:padding="16dp" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

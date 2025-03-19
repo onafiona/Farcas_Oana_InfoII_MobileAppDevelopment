@@ -1,16 +1,24 @@
 package com.example.studybuddy_frontend;
 
 public class Tema {
-    private String nume;
+    private int id;
+    private String titlu;
     private String descriere;
     private String deadline;
 
-    public String getNume() {
-        return nume;
+    public int getId() {
+        return id;
     }
 
-    public void setNume(String nume) {
-        this.nume = nume;
+    public void setId(int id) {
+        this.id = id;
+    }
+    public String getTitlu() {
+        return titlu;
+    }
+
+    public void setNume(String titlu) {
+        this.titlu = titlu;
     }
 
     public String getDescriere() {

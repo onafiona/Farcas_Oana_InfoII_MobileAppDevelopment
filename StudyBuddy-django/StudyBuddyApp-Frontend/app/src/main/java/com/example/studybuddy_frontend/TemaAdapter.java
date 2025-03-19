@@ -11,9 +11,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
 
 public class TemaAdapter extends RecyclerView.Adapter<TemaAdapter.TemaViewHolder> {
-    private List<String> temeList;
+    private List<Tema> temeList;
 
-    public TemaAdapter(List<String> temeList) {
+    public TemaAdapter(List<Tema> temeList) {
         this.temeList = temeList;
     }
 
@@ -26,8 +26,10 @@ public class TemaAdapter extends RecyclerView.Adapter<TemaAdapter.TemaViewHolder
 
     @Override
     public void onBindViewHolder(@NonNull TemaViewHolder holder, int position) {
-        String tema = temeList.get(position);
-        holder.txtTema.setText(tema);
+        Tema tema = temeList.get(position);
+        holder.txtNume.setText(tema.getTitlu());
+        holder.txtDescriere.setText(tema.getDescriere());
+        holder.txtDeadline.setText(tema.getDeadline());
     }
 
     @Override
@@ -36,11 +38,13 @@ public class TemaAdapter extends RecyclerView.Adapter<TemaAdapter.TemaViewHolder
     }
 
     public static class TemaViewHolder extends RecyclerView.ViewHolder {
-        TextView txtTema;
+        TextView txtNume, txtDescriere, txtDeadline;
 
         public TemaViewHolder(@NonNull View itemView) {
             super(itemView);
-            txtTema = itemView.findViewById(R.id.txtTema);
+            txtNume = itemView.findViewById(R.id.txtNume);
+            txtDescriere = itemView.findViewById(R.id.txtDescriere);
+            txtDeadline = itemView.findViewById(R.id.txtDeadline);
         }
     }
 }

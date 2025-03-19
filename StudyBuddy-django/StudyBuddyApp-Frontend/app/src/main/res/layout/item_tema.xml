@@ -8,15 +8,35 @@
     android:background="@color/purple_light"
     tools:ignore="MissingConstraints">
 
-    <TextView
-        android:id="@+id/txtTema"
-        android:layout_width="0dp"
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Tema"
-        android:textSize="20sp"
-        android:textColor="@color/text_white"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        android:orientation="vertical"
+        android:padding="8dp">
+
+        <TextView
+            android:id="@+id/txtNume"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nume temă"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/txtDescriere"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Descriere temă"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/txtDeadline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Deadline"
+            android:textSize="14sp"
+            android:textColor="@android:color/holo_red_dark"/>
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
