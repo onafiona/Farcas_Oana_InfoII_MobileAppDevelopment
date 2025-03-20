@@ -17,6 +17,7 @@ class ProiectSerializer(serializers.ModelSerializer):
         fields = ['id', 'titlu', 'descriere', 'deadline', 'materie']
 
 class ExamenSerializer(serializers.ModelSerializer):
+    materie_nume = serializers.CharField(source='materie.nume', read_only=True)
     class Meta:
         model = Examen
-        fields = ['id', 'descriere', 'data_examen', 'materie']
+        fields = ['id', 'descriere', 'data_examen', 'materie', 'materie_nume']
