@@ -44,7 +44,14 @@ public class TemeActivity extends AppCompatActivity {
         listaTeme = findViewById(R.id.listaTeme);
         listaTeme.setLayoutManager(new LinearLayoutManager(this));
 
-        adapter = new TemaAdapter(teme);
+        adapter = new TemaAdapter(teme, tema -> {
+            Intent intent = new Intent(TemeActivity.this, TemaDetailsActivity.class);
+            intent.putExtra("id", tema.getId());
+            intent.putExtra("titlu", tema.getTitlu());
+            intent.putExtra("descriere", tema.getDescriere());
+            intent.putExtra("deadline", tema.getDeadline());
+            startActivity(intent);
+        });
         listaTeme.setAdapter(adapter);
 
         fetchTeme();
@@ -102,4 +109,7 @@ public class TemeActivity extends AppCompatActivity {
         Intent intent = new Intent(this, AddTemaActivity.class);
         startActivity(intent);
     }
+
+
+
 }

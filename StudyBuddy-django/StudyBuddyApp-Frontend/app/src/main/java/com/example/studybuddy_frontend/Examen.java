@@ -1,18 +1,24 @@
 package com.example.studybuddy_frontend;
 
 public class Examen {
+    private int id;
     private String materie_nume;
     private String descriere;
-    private String deadline;
+    private String data_examen;
 
-    // Constructor
-    public Examen(String materie_nume, String descriere, String deadline) {
-        this.materie_nume = materie_nume;
-        this.descriere = descriere;
-        this.deadline = deadline;
+    public int getId() {
+        return id;
     }
 
-    // Getteri
+    public void setId(int id) {
+        this.id = id;
+    }
+    public Examen(String materie_nume, String descriere, String data_examen) {
+        this.materie_nume = materie_nume;
+        this.descriere = descriere;
+        this.data_examen = data_examen;
+    }
+
     public String getMaterie_nume() {
         return materie_nume;
     }
@@ -21,7 +27,7 @@ public class Examen {
         return descriere;
     }
 
-    public String getDeadline() {
-        return deadline;
+    public String getData_examen() {
+        return data_examen;
     }
 }

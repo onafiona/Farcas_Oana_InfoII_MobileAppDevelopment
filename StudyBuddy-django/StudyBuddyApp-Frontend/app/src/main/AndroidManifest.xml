@@ -17,6 +17,15 @@
         android:theme="@style/Theme.StudyBuddyfrontend"
         tools:targetApi="31">
         <activity
+            android:name=".ExamenDetailsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ProiectDetailsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".TemaDetailsActivity"
+            android:exported="false" />
+        <activity
             android:name=".AddExamenActivity"
             android:exported="false" />
         <activity
@@ -25,10 +34,7 @@
         <activity
             android:name=".AddTemaActivity"
             android:exported="false" />
-        <activity
-            android:name=".CalendarActivity"
-            android:exported="false" />
-        <activity
+       <activity
             android:name=".ExameneActivity"
             android:exported="true" />
         <activity

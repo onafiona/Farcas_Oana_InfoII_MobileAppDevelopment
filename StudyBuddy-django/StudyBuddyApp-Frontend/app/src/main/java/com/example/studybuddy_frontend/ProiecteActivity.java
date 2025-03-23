@@ -43,7 +43,14 @@ public class ProiecteActivity extends AppCompatActivity {
 
         listaProiecte=findViewById(R.id.listaProiecte);
         listaProiecte.setLayoutManager(new LinearLayoutManager(this));
-        adapter=new ProiectAdapter(proiecte);
+        adapter = new ProiectAdapter(proiecte, proiect -> {
+            Intent intent = new Intent(ProiecteActivity.this, ProiectDetailsActivity.class);
+            intent.putExtra("id", proiect.getId());
+            intent.putExtra("titlu", proiect.getTitlu());
+            intent.putExtra("descriere", proiect.getDescriere());
+            intent.putExtra("deadline", proiect.getDeadline());
+            startActivity(intent);
+        });
         listaProiecte.setAdapter(adapter);
         fetchProiecte();
     }

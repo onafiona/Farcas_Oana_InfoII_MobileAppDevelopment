@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AddExamenActivity">
+    tools:context=".ProiectDetailsActivity">
 
+    <!-- Header cu buton de back -->
     <LinearLayout
         android:id="@+id/header"
         android:layout_width="match_parent"
@@ -35,13 +37,15 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
-            android:text="Adauga Examen"
+            android:text="Detalii Proiect"
             android:textColor="@color/text_white"
             android:textSize="20sp"
             android:textStyle="bold" />
     </LinearLayout>
 
+    <!-- Layout cu detaliile proiectului -->
     <LinearLayout
+        android:id="@+id/contentLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
@@ -50,35 +54,35 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
-        <Spinner
-            android:id="@+id/spinnerMaterie"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp" />
-
-        <EditText
-            android:id="@+id/etDescriere"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Descriere" />
-
         <TextView
-            android:id="@+id/tvDeadline"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Selectează data"
-            android:textSize="16sp"
-            android:padding="10dp"
-            android:background="@android:drawable/editbox_background"
-            android:textColorHint="#757575"
-            android:onClick="selecteazaData"/>
-
-        <Button
-            android:id="@+id/btnSalveazaProiect"
+            android:id="@+id/titluProiect"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Salvează"
-            android:onClick="salveazaExamen"/>
+            android:text="Numele temei"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/descriereProiect"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Descrierea temei"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/deadlineProiect"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Deadline"
+            android:textSize="16sp" />
+
+        <Button
+            android:id="@+id/handInButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hand In"
+            android:onClick="handInProiect"
+            android:layout_marginTop="20dp" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

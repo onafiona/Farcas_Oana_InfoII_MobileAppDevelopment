@@ -64,19 +64,6 @@
         app:layout_constraintTop_toBottomOf="@+id/btnProiecte"
         android:onClick="openExamene"/>
 
-    <Button
-        android:id="@+id/btnCalendar"
-        android:layout_width="142dp"
-        android:layout_height="56dp"
-        android:layout_marginTop="-100dp"
-        android:backgroundTint="@color/purple_medium"
-        android:text="Calendar"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnExamene"
-        android:onClick="openCalendar"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

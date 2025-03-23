@@ -12,9 +12,11 @@ import java.util.List;
 
 public class TemaAdapter extends RecyclerView.Adapter<TemaAdapter.TemaViewHolder> {
     private List<Tema> temeList;
+    private OnTemaClickListener listener;
 
-    public TemaAdapter(List<Tema> temeList) {
+    public TemaAdapter(List<Tema> temeList, OnTemaClickListener listener) {
         this.temeList = temeList;
+        this.listener = listener;
     }
 
     @NonNull
@@ -30,6 +32,8 @@ public class TemaAdapter extends RecyclerView.Adapter<TemaAdapter.TemaViewHolder
         holder.txtNume.setText(tema.getTitlu());
         holder.txtDescriere.setText(tema.getDescriere());
         holder.txtDeadline.setText(tema.getDeadline());
+
+        holder.itemView.setOnClickListener(v -> listener.onTemaClick(tema));
     }
 
     @Override
@@ -46,5 +50,8 @@ public class TemaAdapter extends RecyclerView.Adapter<TemaAdapter.TemaViewHolder
             txtDescriere = itemView.findViewById(R.id.txtDescriere);
             txtDeadline = itemView.findViewById(R.id.txtDeadline);
         }
+    }
+    public interface OnTemaClickListener {
+        void onTemaClick(Tema tema);
     }
 }

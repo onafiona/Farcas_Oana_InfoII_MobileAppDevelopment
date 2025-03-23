@@ -40,7 +40,15 @@ public class ExameneActivity extends AppCompatActivity {
         });
         listaExamene=findViewById(R.id.listaExamene);
         listaExamene.setLayoutManager(new LinearLayoutManager(this));
-        adapter=new ExamenAdapter(examene);
+        adapter = new ExamenAdapter(examene, examen -> {
+            Intent intent = new Intent(this, ExamenDetailsActivity.class);
+            intent.putExtra("id", examen.getId());
+            intent.putExtra("materie", examen.getMaterie_nume());
+            intent.putExtra("descriere", examen.getDescriere());
+            intent.putExtra("data", examen.getData_examen());
+            startActivity(intent);
+        });
+
         listaExamene.setAdapter(adapter);
         fetchExamene();
     }

@@ -12,9 +12,11 @@ import java.util.List;
 
 public class ExamenAdapter extends RecyclerView.Adapter<ExamenAdapter.ExamenViewHolder> {
     private List<Examen> exameneList;
+    private OnExamenClickListener listener;
 
-    public ExamenAdapter(List<Examen> exameneList) {
+    public ExamenAdapter(List<Examen> exameneList, OnExamenClickListener listener) {
         this.exameneList = exameneList;
+        this.listener=listener;
     }
 
     @NonNull
@@ -29,7 +31,9 @@ public class ExamenAdapter extends RecyclerView.Adapter<ExamenAdapter.ExamenView
         Examen examen = exameneList.get(position);
         holder.txtMaterie.setText(examen.getMaterie_nume());
         holder.txtDescriere.setText(examen.getDescriere());
-        holder.txtDeadline.setText(examen.getDeadline());
+        holder.txtDeadline.setText(examen.getData_examen());
+
+        holder.itemView.setOnClickListener(v -> listener.onExamenClick(examen));
     }
 
     @Override
@@ -46,5 +50,9 @@ public class ExamenAdapter extends RecyclerView.Adapter<ExamenAdapter.ExamenView
             txtDescriere = itemView.findViewById(R.id.txtDescriere);
             txtDeadline = itemView.findViewById(R.id.txtDeadline);
         }
+    }
+
+    public interface OnExamenClickListener {
+        void onExamenClick(Examen examen);
     }
 }

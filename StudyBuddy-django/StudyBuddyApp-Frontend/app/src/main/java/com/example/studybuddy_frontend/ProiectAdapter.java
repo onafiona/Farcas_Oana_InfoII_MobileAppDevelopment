@@ -12,10 +12,13 @@ import java.util.List;
 
 public class ProiectAdapter extends RecyclerView.Adapter<ProiectAdapter.ProiectViewHolder> {
     private List<Proiect> proiecteList;
+    private OnItemClickListener listener;
 
-    public ProiectAdapter(List<Proiect> proiecteList) {
+    public ProiectAdapter(List<Proiect> proiecteList, OnItemClickListener listener) {
         this.proiecteList = proiecteList;
+        this.listener = listener;
     }
+
 
     @NonNull
     @Override
@@ -30,6 +33,8 @@ public class ProiectAdapter extends RecyclerView.Adapter<ProiectAdapter.ProiectV
         holder.txtTitlu.setText(proiect.getTitlu());
         holder.txtDescriere.setText(proiect.getDescriere());
         holder.txtDeadline.setText(proiect.getDeadline());
+
+        holder.itemView.setOnClickListener(v -> listener.onProiectClick(proiect));
     }
 
     @Override
@@ -46,5 +51,9 @@ public class ProiectAdapter extends RecyclerView.Adapter<ProiectAdapter.ProiectV
             txtDescriere = itemView.findViewById(R.id.txtDescriere);
             txtDeadline = itemView.findViewById(R.id.txtDeadline);
         }
+    }
+
+    public interface OnItemClickListener {
+        void onProiectClick(Proiect proiect);
     }
 }
