@@ -7,8 +7,8 @@ import retrofit2.http.GET;
 import retrofit2.http.Path;
 
 public interface APIService {
-    @GET("api/teme/") // Endpoint-ul API-ului pentru a obține temele
-    Call<List<Tema>> getTeme(); // Returnează o listă de teme
+    @GET("api/teme/")
+    Call<List<Tema>> getTeme();
 
     @GET("api/proiecte/")
     Call<List<Proiect>> getProiecte();

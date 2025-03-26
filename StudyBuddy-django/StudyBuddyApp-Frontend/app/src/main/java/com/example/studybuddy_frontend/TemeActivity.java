@@ -59,31 +59,24 @@ public class TemeActivity extends AppCompatActivity {
     }
 
     private void fetchTeme() {
-        // 1. Creăm conexiunea la server
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://10.0.2.2:8000/") // adresa serverului local pentru emulator
-                .addConverterFactory(GsonConverterFactory.create()) // transformă datele JSON în Java
+                .baseUrl("http://10.0.2.2:8000/")
+                .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
-        // 2. Creăm serviciul API care știe să "vorbească" cu serverul
         APIService apiService = retrofit.create(APIService.class);
 
-        // 3. Cerem temele de la server (GET)
         Call<List<Tema>> call = apiService.getTeme();
 
-        // 4. Așteptăm răspunsul de la server
         call.enqueue(new Callback<List<Tema>>() {
 
-            // Când primim răspuns OK (200)
             @Override
             public void onResponse(Call<List<Tema>> call, Response<List<Tema>> response) {
                 if (response.isSuccessful() && response.body() != null) {
-                    // Am primit temele! 🥳
-                    teme.clear();  // ștergem lista veche
-                    teme.addAll(response.body());  // adăugăm noile teme
-                    adapter.notifyDataSetChanged();  // actualizăm RecyclerView-ul
+                    teme.clear();
+                    teme.addAll(response.body());
+                    adapter.notifyDataSetChanged();
                 } else {
-                    // Dacă nu avem teme sau serverul nu răspunde corect
                     Log.e("API_RESPONSE", "Cod răspuns: " + response.code());
                     Log.e("API_RESPONSE", "Răspuns complet: " + response.errorBody());
                     Toast.makeText(TemeActivity.this, "Nu s-au găsit teme!", Toast.LENGTH_SHORT).show();
@@ -94,8 +87,8 @@ public class TemeActivity extends AppCompatActivity {
             @Override
             public void onFailure(Call<List<Tema>> call, Throwable t) {
                 Toast.makeText(TemeActivity.this, "Eroare la conectare: " + t.getMessage(), Toast.LENGTH_SHORT).show();
-                t.printStackTrace();  // Afișează eroarea detaliată în Logcat
-                Log.e("API_ERROR", "Eroare: " + t.getMessage()); // Log-ul cu eroarea
+                t.printStackTrace();
+                Log.e("API_ERROR", "Eroare: " + t.getMessage());
             }
         });
     }

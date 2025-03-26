@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">SafeAlert</string>
+    <string name="accessibility_service_description">Shortcut pentru trimiterea automată a mesajului de urgență</string>
+</resources>

@@ -122,7 +122,6 @@ public class AddTemaActivity extends AppCompatActivity {
 
         int selectedMaterieId = materiiIdList.get(selectedPosition);
 
-        // Construim JSON-ul
         JSONObject jsonObject = new JSONObject();
         try {
             jsonObject.put("titlu", titlu);
@@ -134,7 +133,6 @@ public class AddTemaActivity extends AppCompatActivity {
             return;
         }
 
-        // Trimitem datele către backend
         String url = "http://10.0.2.2:8000/api/teme/";
 
         JsonObjectRequest request = new JsonObjectRequest(Request.Method.POST, url, jsonObject,
